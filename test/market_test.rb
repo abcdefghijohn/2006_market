@@ -14,7 +14,7 @@ class MarketTest < Minitest::Test
     assert_equal [], market.vendors
   end
 
-  def test_it_can_add_a_vendor
+  def test_it_can_add_a_vendor_and_get_name
     market = Market.new("South Pearl Street Farmers Market")
     vendor1 = Vendor.new("Rocky Mountain Fresh")
     item1 = Item.new({name: 'Peach', price: "$0.75"})
@@ -35,7 +35,8 @@ class MarketTest < Minitest::Test
     market.add_vendor(vendor2)
     market.add_vendor(vendor3)
 
-    assert_equal [vendor1, vendor2, vendor3], market.vendors 
-
+    assert_equal [vendor1, vendor2, vendor3], market.vendors
+    assert_equal ["Rocky Mountain Fresh", "Ba-Nom-a-Nom", "Palisade Peach Shack"],
+                 market.vendor_names
   end
 end
