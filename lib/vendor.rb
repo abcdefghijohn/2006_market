@@ -14,4 +14,8 @@ class Vendor
     @inventory[item] = quantity
     @stock += quantity
   end
+
+  def potential_revenue
+    require "pry"; binding.pry
+  end
 end
