@@ -16,6 +16,10 @@ class Vendor
   end
 
   def potential_revenue
-    require "pry"; binding.pry
+    total = 0
+    @inventory.each do |item|
+      total += item[0].price * item[1]
+    end
+    total 
   end
 end
